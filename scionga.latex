@@ -31,7 +31,7 @@
     \section{Prawdopodobieństwo całkowite i warunkowe}
     Prawdopodobieństwo całkowite. Niech będzie dana przestrzeń probabilistyczna $(\Omega, \Sigma, P)$ oraz zdarzenia $A_1, A_2, A_n \in \Sigma$ spełniająca warunki: 
         $P(A_i) > 0$ dla każdego $i = 1,...,n$;
-        $A_i \cap A_j \neq \emptyset$ dla wszystkich $i \neq j$;
+        $A_i \cap A_j = \emptyset$ dla wszystkich $i \neq j$;
         $A_1 \cup ... A_n = \Omega$
         \nn
     Prawdopodobieństwo warunkowe: $P(B|A) = \frac{P(B \cap A)}{P(A)}$. Wtedy dla każdego zdarzenia $B \in \Sigma$ zachodzi następująca równość: $P(B) = \Sigma_{i=1}^n P(B|A_i)P(A_i)$
@@ -68,8 +68,8 @@
     \nn
     Rozkład wykładniczy (ciągły odpowiednik rozkładu geometrycznego - czas oczekiwania na pierwszy sukces w nieskończonym ciągu niezależnych prób Bernolulliego): $f(x) = \lambda e^{-\lambda x}, x \ge 0$, $F(x)= 1-e^{-\lambda x}$, $m = \frac{1}{\lambda}$, $\sigma = \frac{1}{\lambda^2}$ Rozkład geometryczny: $p(1-p)^{k-1}$, $m = \frac{1}{p}$, $\sigma = \frac{1-p}{p^2}$ 
     \nn
-    Rozkład normalny:$ \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{{x-m}^2}{2\sigma^2}}$  
-    Własności $\Phi(x)$: $\Phi(x) = 1 - \Phi(-x)$, $\Phi^{-1}(\alpha) = -\Phi^{-1}(1-\alpha)$, $\Phi(0) = \frac{1}{2}$
+    Rozkład normalny:$ \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-m)^2}{2\sigma^2}}$  
+    Własności $\Phi(x)$: $\Phi(x) = 1 - \Phi(-x)$, $\Phi^{-1}(\alpha) = -\Phi^{-1}(1-\alpha)$, $\Phi(0) = \frac{1}{2}$, $\Phi_{m,\sigma}(x) = \Phi(\frac{x-m}{\sigma})$
     \nn
     Dla X bedącego zmienną losową o rozkładzie normalnym $N(m,\sigma)$ i $Y = aX + b$, gdzie $a \neq 0$ Y ma rozkład normalny $N(am+b, |a|\sigma)$
     \\
@@ -85,7 +85,7 @@
     tw. Lindeberga-Levy'ego: $\forall x\in \mathbb{R} $ $\lim _{n\rightarrow \infty } P( Z_{n} \ \leqslant x) =\Phi ( x)$ \\
     Centralne twierdzenie graniczne dla sum: $\forall x\in \mathbb{R} $ $\lim _{n\rightarrow \infty }( F_{S_{n}}( x) \ -\ \Phi _{nm,\sigma \sqrt{n}}( x)) =0$.
     Dla średnich: $\forall x\in \mathbb{R} $ $\lim _{n\rightarrow \infty }( F_{\frac{S_{n}}{n}}( x) \ -\ \Phi _{m,\frac{\sigma }{\sqrt{n}}}( x)) =0$  \\
-    tw. de Moivre’a-Laplace’a (gdy $X_{i}$ to ciąg niezależnych prób Bernoullego z tym samym $p$): $\forall x\in \mathbb{R} $ $P\left(\frac{S_{n} -np}{\sqrt{npq}} \leqslant x\right) \rightarrow \Phi ( x)$
+    tw. de Moivre’a-Laplace’a (gdy $X_{i}$ to ciąg niezależnych prób Bernoullego z tym samym $p$): $\forall x\in \mathbb{R} $ $P\left(\frac{S_{n} -np}{\sqrt{npq}} \leqslant x\right) \rightarrow \Phi (x)$: $ \Phi(\frac{S_{n} -np}{\sqrt{npq}})$, $q = 1-p$
     
     \section{Estymacja punktowa}
     Niech $X_1, ..., X_n$ będzie próbką prostą ze zmiennej losowej X. Estymatorem parametru $\theta$ rozkładu $P_\theta \in \mathbb{P}$ "odpowiednio bliskiego" rozkładowi $P_X$ nazywamy zmienną losową $\hat{\theta} \circ (X_1, ..., X_n) = T(X_1, ..., X_n)$ gdzie T jest odpowiednio dobraną funkcją, która "rozsądnie" przybliża (estymuje) wartość $\theta$.
