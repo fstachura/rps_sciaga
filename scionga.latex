@@ -34,13 +34,9 @@
         $A_i \cap A_j \neq \emptyset$ dla wszystkich $i \neq j$;
         $A_1 \cup ... A_n = \Omega$
         \nn
-    Prawdopodobieństwo warunkowe: $P(B|A) = \frac{P(B \cap A)}{P(A)}$
+    Prawdopodobieństwo warunkowe: $P(B|A) = \frac{P(B \cap A)}{P(A)}$. Wtedy dla każdego zdarzenia $B \in \Sigma$ zachodzi następująca równość: $P(B) = \Sigma_{i=1}^n P(B|A_i)P(A_i)$
     \nn
-    Wtedy dla każdego zdarzenia $B \in \Sigma$ zachodzi następująca równość: $P(B) = \Sigma_{i=1}^n P(B|A_i)P(A_i)$
-    \nn
-    Wzór Bayesa: $P(A_k|B) = \frac{P(B|A_k)P(A_k)}{\Sigma_{i=1}^n P(B|A_i)P(A_i)}$
-    \nn
-    Niezależność zdarzeń: $P(A \cap B) = P(A)\cdot P(B)$, $P(A_{k_1} \cap ... \cap A_{k_r}) = P(A_{k_1}) \cdot ... \cdot P(A_{k_r})$
+    Wzór Bayesa: $P(A_k|B) = \frac{P(B|A_k)P(A_k)}{\Sigma_{i=1}^n P(B|A_i)P(A_i)}$. Niezależność zdarzeń: $P(A \cap B) = P(A)\cdot P(B)$, $P(A_{k_1} \cap ... \cap A_{k_r}) = P(A_{k_1}) \cdot ... \cdot P(A_{k_r})$
     \section{Wartość oczekiwana i wariancja}
     Wartość oczekiwana dla rozkładu dyskretnego: $m = E(X) = \Sigma_{i=1}^n x_i p_i$, ciągłego: $m = E(X) = \int^{\infty}_{-\infty}x f(x) dx$
     \nn
@@ -48,16 +44,15 @@
     \nn
     Wariancja dla rozkładu dyskretnego: $D^2(X) = \Sigma_{i=1}^n (x_i-m)^2 p_i$, dla rozkładu ciągłego: $D^2(X) = \int_{-\infty}^{\infty} (x-m)^2 f(x) dx$
     \nn
-    Zmienne niezależne gdy dla dowolnych zdarzeń $B_1,...,B_k \in \Sigma$: $P(X_1 \in B_1, ..., X_k \in B_k) = P(X_1 \in B_1) \cdot ... \cdot P(X_k \in B_k)$
+    Zmienne niezależne gdy dla dowolnych zdarzeń $B_1,...,B_k \in \Sigma$: $P(X_1 \in B_1, ..., X_k \in B_k) = P(X_1 \in B_1) \cdot ... \cdot P(X_k \in B_k)$.
     \nn
     Wartości własności i wariancji: \nn
     jeżeli $X = const = c$, to $E(X) = c$;\quad 
     $E(aX) = aE(X) \forall a \in \mathbb{R}$;\quad
-    $E(X+Y) + E(X)+E(Y)$;\quad
-    $D^2(X) + E(X^2)-E(X)^2$;\quad
+    $E(X+Y) = E(X)+E(Y)$;\quad
+    $D^2(X) = E(X^2)-E(X)^2$;\quad
     $D^2(aX) = a^2D^2(X) \forall a \in \mathbb{R}$;\quad
     $X = const = c$ to $D^2(X) = 0$; 
-    \nn
     jeżeli X i Y są niezależnymi zmiennymi losowymi, to $D^2(X+Y)=D^2(X)+D^2(Y)$
 
     \section{Rozkłady}
@@ -65,52 +60,47 @@
     \nn
     Jeżeli $X \sim B(n,p)$ i $Y \sim B(m,p)$ są dwiema niezależnymi zmiennymi losowymi o rozkładzie dwumianowym, wtedy ich suma $X+Y$ jest zmienną losową o rozkładzie dwumianowym $B(n+m, p)$
     \nn
-    Rozkład Poissona($m \geq 100 \land p \leq \frac{1}{10}$) : $f(x)= \frac{e^{-\lambda} \lambda^k}{k!}$, $\lambda = np$, $m = \lambda$, $\sigma = \lambda$\
+    Rozkład Poissona (duża liczba prób bernoullego $m \geq 100 \land$ z małym prawdopodobieństwem $p \leq \frac{1}{10}$) : $f(x)= \frac{e^{-\lambda} \lambda^k}{k!}$, $\lambda = np$, $m = \lambda$, $\sigma = \lambda$\
     \nn
     Dla dwóch zmiennych losowych o rozkładzie Poissona z parametrami $\lambda$ i $\mu$ suma tych zmiennych losowych ma rozkład Possiona o parametrze $\lambda+\mu$
     \nn
-    Rozkład geometryczny: $p^k (1-p)^{n-k}$, $m = \frac{1}{p}$, $\sigma = \frac{1-p}{p^2}$
-    \nn
     Rozkład jednostajny: $f(x) = \frac{1}{b-a}$ gdy $x \in [a,b]$, 0 gdy $x \notin [a,b]$, $ F(x)=$ 0 gdy $x < a$ $ \frac{x-a}{b-a}$ gdy $x \in [a,b]$ 1 gdy $x > b$, $m = \frac{a+b}{2}$, $\sigma = \frac{(b-a)^2}{12} $
     \nn
-    Rozkład wykładniczy: $f(x) = \lambda e^{-\lambda x}$, $F(x)= 1-e^{-\lambda x}$, $m = \frac{1}{\lambda}$, $\sigma = \frac{1}{\lambda^2}$
+    Rozkład wykładniczy (ciągły odpowiednik rozkładu geometrycznego - czas oczekiwania na pierwszy sukces w nieskończonym ciągu niezależnych prób Bernolulliego): $f(x) = \lambda e^{-\lambda x}, x \ge 0$, $F(x)= 1-e^{-\lambda x}$, $m = \frac{1}{\lambda}$, $\sigma = \frac{1}{\lambda^2}$ Rozkład geometryczny: $p(1-p)^{k-1}$, $m = \frac{1}{p}$, $\sigma = \frac{1-p}{p^2}$ 
     \nn
     Rozkład normalny:$ \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{{x-m}^2}{2\sigma^2}}$  
-    \nn
-    Własności $\Phi(x)$: $\Phi(x) = 1 - \Phi(-x)$, $\Phi^{-1}(\alpha) = -\Phi^{-1}(1-\alpha)$
+    Własności $\Phi(x)$: $\Phi(x) = 1 - \Phi(-x)$, $\Phi^{-1}(\alpha) = -\Phi^{-1}(1-\alpha)$, $\Phi(0) = \frac{1}{2}$
     \nn
     Dla X bedącego zmienną losową o rozkładzie normalnym $N(m,\sigma)$ i $Y = aX + b$, gdzie $a \neq 0$ Y ma rozkład normalny $N(am+b, |a|\sigma)$
     \\
-    Dystrybuanta zmiennej losowej: $F(x) = F_X(x) = P_X((-\infty, x]) = P(X \in (-\infty, x])$. \\
-    Pochodna dystrybuanty to funkcja rozkładu: $F'(x) = f(x)$\\
-    Dystrybuanta jest niemalejąca, $\lim_{x \rightarrow -\infty}F(x) = 0$, $\lim_{x \rightarrow \infty}F(x) = 1$. \\
+    Dystrybuanta zmiennej losowej: $F(x) = F_X(x) = P_X((-\infty, x]) = P(X \in (-\infty, x])$. Pochodna dystrybuanty to funkcja rozkładu: $F'(x) = f(x)$\\
+    Dystrybuanta jest niemalejąca, $\lim_{x \rightarrow -\infty}F(x) = 0$, $\lim_{x \rightarrow \infty}F(x) = 1$. 
     Dla rozkładu dyskretnego: $F(x) = \sum_{i:x_i \le x}p_i$
     
 
     \section{Centralne twierdzenie graniczne}
 	
     Dla $S_{n}= X_{1} + ... + X_{n}$, gdzie $X_{i}$ to niezależne zmienne losowe z tym samym rozkładem, nadzieją $m$ i wariancją $\sigma^{2}$, $\sigma>0$:\\ 
-    $Z_{n} =\frac{S_{n} -E( S_{n})}{\sqrt{D^{2}( S_{n})}} =\frac{S_{n} -nm}{\sigma \sqrt{n}}$ - $Z_{n}$ to standaryzacja sumy $S_{n}$, $E(Z_{n})=0$, $D^{2}(Z_{n})=1$ \\
+    $Z_{n} =\frac{S_{n} -E( S_{n})}{\sqrt{D^{2}( S_{n})}} =\frac{S_{n} -nm}{\sigma \sqrt{n}}$ - $Z_{n}$ to standaryzacja sumy $S_{n}$, $E(Z_{n})=0$, $D^{2}(Z_{n})=1$ 
     tw. Lindeberga-Levy'ego: $\forall x\in \mathbb{R} $ $\lim _{n\rightarrow \infty } P( Z_{n} \ \leqslant x) =\Phi ( x)$ \\
-    Centralne twierdzenie graniczne dla sum: $\forall x\in \mathbb{R} $ $\lim _{n\rightarrow \infty }( F_{S_{n}}( x) \ -\ \Phi _{nm,\sigma \sqrt{n}}( x)) =0$ \\
-    Centralne twierdzenie graniczne dla średnich: $\forall x\in \mathbb{R} $ $\lim _{n\rightarrow \infty }( F_{\frac{S_{n}}{n}}( x) \ -\ \Phi _{m,\frac{\sigma }{\sqrt{n}}}( x)) =0$ \\
+    Centralne twierdzenie graniczne dla sum: $\forall x\in \mathbb{R} $ $\lim _{n\rightarrow \infty }( F_{S_{n}}( x) \ -\ \Phi _{nm,\sigma \sqrt{n}}( x)) =0$.
+    Dla średnich: $\forall x\in \mathbb{R} $ $\lim _{n\rightarrow \infty }( F_{\frac{S_{n}}{n}}( x) \ -\ \Phi _{m,\frac{\sigma }{\sqrt{n}}}( x)) =0$  \\
     tw. de Moivre’a-Laplace’a (gdy $X_{i}$ to ciąg niezależnych prób Bernoullego z tym samym $p$): $\forall x\in \mathbb{R} $ $P\left(\frac{S_{n} -np}{\sqrt{npq}} \leqslant x\right) \rightarrow \Phi ( x)$
     
     \section{Estymacja punktowa}
     Niech $X_1, ..., X_n$ będzie próbką prostą ze zmiennej losowej X. Estymatorem parametru $\theta$ rozkładu $P_\theta \in \mathbb{P}$ "odpowiednio bliskiego" rozkładowi $P_X$ nazywamy zmienną losową $\hat{\theta} \circ (X_1, ..., X_n) = T(X_1, ..., X_n)$ gdzie T jest odpowiednio dobraną funkcją, która "rozsądnie" przybliża (estymuje) wartość $\theta$.
     Przykładami estymatorów są: średnia arytmetyczna z próbki - $\bar{X} = \frac{X_1 + ... + X_n}{n}$ - estymator wartości oczekiwanej $E(X)$. \\ Mediana z próbki - $me X_{(\lceil n/2 \rceil)}$ - estymator mediany. Wariancja z próbki - $S^2 = \frac{1}{n}\sum^n_{n=1}(X_1 - m)^2$ (jeżeli $E(X)=m$ jest znane), \\ lub $S^2 = \frac{1}{n} = \sum^n_{i=1}(X_i-X)^2$ (jeżeli $E(X)=m$ nie jest znane) - estymator wariancji $D^2(X)$ \\
-    Estymator nieobciążony - $E(\hat{\theta}) = \theta$. \\ Estymator zgodny - $P(\omega \in \Omega : \lim_{n \rightarrow \infty} \hat{\theta}_n(\omega) = \theta) = 1$
-     \nn
-    Metoda MLE: dla zmiennych losowych $X_1, ..., X_n$ \nn
-    $L(\theta) = \Pi_{i = 1}^{n} P(X_i = x_i)$ - dla zmiennych dyskretnych \nn
-    $L(\theta) = \Pi_{i = 1}^{n} f(x_i)$ - dla zmiennych ciągłych \nn
-    Żeby wyznaczyć MLE $(\theta)$ należy wyznaczyć maximum funkcji wiarygodności$L(\theta)$
+    Estymator nieobciążony - $E(\hat{\theta}) = \theta$. Estymator zgodny - $P(\omega \in \Omega : \lim_{n \rightarrow \infty} \hat{\theta}_n(\omega) = \theta) = 1$
+    Metoda MLE: dla zmiennych losowych $X_1, ..., X_n$,
+    $L(\theta) = \Pi_{i = 1}^{n} P(X_i = x_i)$ - dla zmiennych dyskretnych,
+    $L(\theta) = \Pi_{i = 1}^{n} f(x_i)$ - dla zmiennych ciągłych,
+    Żeby wyznaczyć MLE $(\theta)$ należy wyznaczyć maximum funkcji wiarygodności $L(\theta)$
 
     \section{Przedziały ufności Estymacja Przedziałowa}
     
     Dla wartości oczekiwanej w rozkładzie normalnym ze znanym odchyleniem standardowym (na poziomie ufności $1-\alpha$): \nn
     $(\bar{X} - \frac{\sigma}{\sqrt{n}} \Phi^{-1}(1-\frac{\alpha}{2}), \bar{X} + \frac{\sigma}{\sqrt{n}}\Phi^{-1}(1 - \frac{\alpha}{2}))$, 
-    $(\infty, \bar{X} + \frac{\sigma}{\sqrt{n}}\Phi^{-1}(1-\alpha))$,
+    $(-\infty, \bar{X} + \frac{\sigma}{\sqrt{n}}\Phi^{-1}(1-\alpha))$,
     $(\bar{X} - \frac{\sigma}{\sqrt{n}}\Phi^{-1}(1-\alpha), \infty)$
 
     \noindent
@@ -124,7 +114,7 @@
     $(\hat{p} - \frac{ \sqrt{ \hat{p} (1-\hat{p}) } }{\sqrt{n}} \Phi^{-1}(1-\frac{\alpha}{2}), 
     \hat{p} + \frac{ \sqrt{ \hat{p} (1-\hat{p}) } }{\sqrt{n}} \Phi^{-1}(1-\frac{\alpha}{2}))$ ,
     $(0, \hat{p} + \frac{ \sqrt{ \hat{p} (1-\hat{p}) } }{\sqrt{n}} \Phi^{-1}(1-\alpha)$ ,
-    $(\hat{p} - \frac{ \sqrt{ \hat{p} (1-\hat{p}) } }{\sqrt{n}} \Phi^{-1}(1-\alpha), 1)$
+    $(\hat{p} - \frac{ \sqrt{ \hat{p} (1-\hat{p}) } }{\sqrt{n}} \Phi^{-1}(1-\alpha), 1)$ gdzie $\hat{p} = \bar{X_n} = \frac{\#\{i:X_i=1\}}{n}$
 
     \noindent
     Dla wariancji w rozkładzie normalnym z nieznaną wartością oczekiwaną: 
